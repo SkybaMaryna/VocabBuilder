@@ -7,17 +7,49 @@ import FixelDisplaySBoldWoff2 from './fonts/FixelDisplay-SemiBold.woff2';
 import FixelDisplaySBoldTtf from './fonts/FixelDisplay-SemiBold.ttf';
 import FixelDisplayBoldWoff2 from './fonts/FixelDisplay-Bold.woff2';
 import FixelDisplayBoldTtf from './fonts/FixelDisplay-Bold.ttf';
-import SFProTextTtf from './fonts/SFProText-Regular.ttf'
-import SFProDisplayLightOtf from './fonts/SF-Pro-Display-Light.otf'
-import SFProDisplayOtf from './fonts/SF-Pro-Display-Regular.otf'
-
+import SFProTextTtf from './fonts/SFProText-Regular.ttf';
+import SFProDisplayLightOtf from './fonts/SF-Pro-Display-Light.otf';
+import SFProDisplayOtf from './fonts/SF-Pro-Display-Regular.otf';
 
 const GlobalStyle = createGlobalStyle`
+
+:root {
+//colors
+--black: #121417; 
+--black-10: rgba(18, 20, 23, 0.1);
+--black-20: rgba(18, 20, 23, 0.2);
+--black-50: rgba(18, 20, 23, 0.5);
+--black-80: rgba(18, 20, 23, 0.8);
+--white: #FCFCFC;
+--white-30:rgba(252, 252, 252, 0.30);
+--white-40:rgba(252, 252, 252, 0.40);
+--white-80:rgba(252, 252, 252, 0.80);
+--green: #85AA9F;
+--green-10: rgba(133, 170, 159, 0.1);
+--light-green: #A5C0B8;
+--red: rgba(216, 0, 39, 1);
+--bright-green: rgba(60, 191, 97, 1);
+--stat-green: #2BD627
+--gray: #DBDBDB;
+
+// fonts
+--FixelDisplay: 'FixelDisplay', sans-serif;
+--FixelDisplay-Medium: 'FixelDisplay-Medium', sans-serif;
+--FixelDisplay-SemiBold: 'FixelDisplay-SemiBold', sans-serif;
+--FixelDisplay-Bold: 'FixelDisplay-Bold', sans-serif;
+--SFProText:'SFProText', sans-serif;
+--SFProDisplay-Light: 'SFProDisplay-Light', sans-serif;
+--SFProDisplay: 'SFProDisplay', sans-serif;
+
+// other
+--slow-transform: 500ms ease;
+--fast-transform: 300ms ease;
+}
 
 
 body {
   margin: 0;
-  font-family: 'FixelDisplay-Medium', sans-serif;
+  font-family: var(--FixelDisplay-Medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
@@ -65,7 +97,7 @@ p {
 }
 
   //Fonts
-  @font-face {
+@font-face {
   font-family: 'FixelDisplay';
   src: url(${FixelDisplayWoff2}) format('woff2'),
   url(${FixelDisplayTtf}) format('truetype');
@@ -111,7 +143,6 @@ p {
   font-weight: 400;
   font-style: normal;
 }
-
 `;
 
 export default GlobalStyle;
