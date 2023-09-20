@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/VocabBuilder/static/css/main.b5320759.css",
-    "main.js": "/VocabBuilder/static/js/main.07d3183d.js",
+    "main.js": "/VocabBuilder/static/js/main.6de0619f.js",
+    "static/media/SFProText-Regular.ttf": "/VocabBuilder/static/media/SFProText-Regular.90da7ab18293ca42e335.ttf",
+    "static/media/SF-Pro-Display-Light.otf": "/VocabBuilder/static/media/SF-Pro-Display-Light.5a47a04ca76b10e69ca3.otf",
+    "static/media/SF-Pro-Display-Regular.otf": "/VocabBuilder/static/media/SF-Pro-Display-Regular.d1f5e6e16dd4f75c3950.otf",
+    "static/media/FixelDisplay-Medium.ttf": "/VocabBuilder/static/media/FixelDisplay-Medium.2bf73c318b39b6747802.ttf",
+    "static/media/FixelDisplay-SemiBold.ttf": "/VocabBuilder/static/media/FixelDisplay-SemiBold.5a60f17e88fec6794428.ttf",
+    "static/media/FixelDisplay-Bold.ttf": "/VocabBuilder/static/media/FixelDisplay-Bold.42570372d1fc688bdc82.ttf",
+    "static/media/FixelDisplay-Regular.ttf": "/VocabBuilder/static/media/FixelDisplay-Regular.885dc0e15ca46cc1f777.ttf",
+    "static/media/FixelDisplay-SemiBold.woff2": "/VocabBuilder/static/media/FixelDisplay-SemiBold.1be0490ce9d813e0e207.woff2",
+    "static/media/FixelDisplay-Bold.woff2": "/VocabBuilder/static/media/FixelDisplay-Bold.dcc3807da8e7f0dce39e.woff2",
+    "static/media/FixelDisplay-Medium.woff2": "/VocabBuilder/static/media/FixelDisplay-Medium.366a8327f2faf30683f7.woff2",
+    "static/media/FixelDisplay-Regular.woff2": "/VocabBuilder/static/media/FixelDisplay-Regular.12dbc6ce12689796383f.woff2",
     "index.html": "/VocabBuilder/index.html",
-    "main.b5320759.css.map": "/VocabBuilder/static/css/main.b5320759.css.map",
-    "main.07d3183d.js.map": "/VocabBuilder/static/js/main.07d3183d.js.map"
+    "main.6de0619f.js.map": "/VocabBuilder/static/js/main.6de0619f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5320759.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.6de0619f.js"
   ]
 }
