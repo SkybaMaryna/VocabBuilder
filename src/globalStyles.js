@@ -31,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
 --bright-green: rgba(60, 191, 97, 1);
 --stat-green: #2BD627
 --gray: #DBDBDB;
+--error-message: #D80027;
+--success-message:#3CBF61;
 
 // fonts
 --FixelDisplay: 'FixelDisplay', sans-serif;

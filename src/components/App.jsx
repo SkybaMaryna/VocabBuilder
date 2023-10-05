@@ -1,28 +1,27 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
+import { PublicRoute, PrivateRoute } from 'hoc';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
-import { PublicRoute } from 'hoc';
-import SharedLayout from './SharedLayout/SharedLayout';
+
 import DictionaryPage from 'pages/DictionaryPage/DictionaryPage';
-import { PrivateRoute } from 'hoc/PrivetRoute';
 import RecommendPage from 'pages/RecommendPage/RecommendPage';
 import TrainingPage from 'pages/TrainingPage/TrainingPage';
+import { SharedLayout } from 'components';
 
 export const App = () => {
   return (
     <Routes>
       <Route
-        path="login"
+        path="/"
         element={<PublicRoute>{<LoginPage />}</PublicRoute>}
       />
       <Route
-        path="register"
+        path="/register"
         element={<PublicRoute>{<RegisterPage />}</PublicRoute>}
       />
-      
-      <Route path="/" element={<SharedLayout />}>
+
+      <Route path="/main" element={<SharedLayout />}>
         <Route
-          index
           path="dictionary"
           element={<PrivateRoute>{<DictionaryPage />}</PrivateRoute>}
         />
