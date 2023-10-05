@@ -8,7 +8,7 @@ export const RegisterSchema = Yup.object({
     )
     .required('Required'),
   email: Yup.string()
-    .matches( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'This is an ERROR email')
+    .matches( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Error email')
     .required('Required'),
   password: Yup.string()
     .required('No password provided.')
@@ -21,7 +21,7 @@ export const RegisterSchema = Yup.object({
 
 export const LoginSchema = Yup.object({
   email: Yup.string()
-    .matches( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'This is an ERROR email')
+    .matches( /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Error email')
     .required('Required'),
   password: Yup.string()
     .required('No password provided.')

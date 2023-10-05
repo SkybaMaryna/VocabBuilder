@@ -76,10 +76,7 @@ export const LoginForm = () => {
               />
               {errors.email && touched.email && (
                 <StyledMessage>
-                    <StyledIconError
-                    width="16"
-                    height="16"
-                  >
+                  <StyledIconError width="16" height="16">
                     <use href={icons + '#icon-error'}></use>
                   </StyledIconError>
                   <StyledError name="email" component="div" />
@@ -87,13 +84,10 @@ export const LoginForm = () => {
               )}
               {touched.email && !errors.email && (
                 <StyledMessage>
-                    <StyledIconSuccess
-                    width="16"
-                    height="16"
-                  >
+                  <StyledIconSuccess width="16" height="16">
                     <use href={icons + '#icon-success'}></use>
                   </StyledIconSuccess>
-                  <StyledSuccessMessage>This is an CORRECT email</StyledSuccessMessage>
+                  <StyledSuccessMessage>Success email</StyledSuccessMessage>
                 </StyledMessage>
               )}
             </StyledInputWrap>
@@ -124,7 +118,7 @@ export const LoginForm = () => {
                   >
                     <use href={icons + '#icon-eyeOff'}></use>
                   </StyledIconEyeOff>
-                ) : touched.password && isClicked ? (
+                ) : (
                   <StyledIconEye
                     width="20"
                     height="20"
@@ -132,15 +126,23 @@ export const LoginForm = () => {
                   >
                     <use href={icons + '#icon-eye'}></use>
                   </StyledIconEye>
-                ) : (
-                  ''
                 )}
               </StyledPasswordDiv>
               {errors.password && touched.password && (
-                <StyledError name="password" component="div" />
+                <StyledMessage>
+                  <StyledIconError width="16" height="16">
+                    <use href={icons + '#icon-error'}></use>
+                  </StyledIconError>
+                  <StyledError name="password" component="div" />
+                </StyledMessage>
               )}
               {touched.password && !errors.password && (
-                <StyledMessage>This is an CORRECT password</StyledMessage>
+                <StyledMessage>
+                  <StyledIconSuccess width="16" height="16">
+                    <use href={icons + '#icon-success'}></use>
+                  </StyledIconSuccess>
+                  <StyledSuccessMessage>Success password</StyledSuccessMessage>
+                </StyledMessage>
               )}
             </StyledInputWrap>
           </StyledInnerDiv>

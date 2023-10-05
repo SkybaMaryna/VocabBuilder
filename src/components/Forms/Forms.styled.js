@@ -69,6 +69,9 @@ export const StyledIconEyeOff = styled.svg`
   fill: white;
 `;
 export const StyledInput = styled(Field)`
+  display: flex;
+  height: 56px;
+  align-items: center;
   width: 100%;
   border-radius: 15px;
   border: 1px solid var(--black-10);
@@ -86,11 +89,11 @@ export const StyledInput = styled(Field)`
     border: 1px solid var(--green);
   }
   &.valid-border {
-    border-color: green;
+    border-color: var(--success-message);
     outline: none;
   }
   &.invalid-border {
-    border-color: red;
+    border-color: var(--error-message);
     outline: none;
   }
 `;
