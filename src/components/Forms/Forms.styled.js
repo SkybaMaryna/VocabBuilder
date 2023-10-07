@@ -69,12 +69,12 @@ export const StyledIconEyeOff = styled.svg`
   fill: white;
 `;
 export const StyledInput = styled(Field)`
-  display: flex;
+  justify-content: center;
   height: 56px;
-  align-items: center;
   width: 100%;
   border-radius: 15px;
-  border: 1px solid var(--black-10);
+  border: 1px solid;
+  border-color: var(--black-10);
   background-color: transparent;
   padding: 16px 18px;
   padding-right: 50px;
@@ -82,11 +82,16 @@ export const StyledInput = styled(Field)`
   font-family: var(--FixelDisplay);
   font-size: 16px;
   line-height: calc(24 / 16);
+  transition: border-color var(--slow-transform);
+
+  ::placeholder{
+    color: var(--black);
+  }
 
   &:focus,
   &:hover {
     outline: 1px solid var(--green);
-    border: 1px solid var(--green);
+    border-color: var(--green);
   }
   &.valid-border {
     border-color: var(--success-message);
