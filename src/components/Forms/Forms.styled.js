@@ -11,13 +11,17 @@ export const StyledFormInsight = styled(Form)`
   max-width: 375px;
   width: 100%;
   height: auto;
-  border-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+
   background: var(--green-10);
   padding: 32px 16px;
 
   @media ${devices.tablet} {
     max-width: 628px;
     padding: 48px 64px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
   }
 `;
 export const StyledTitle = styled.h2`
@@ -84,7 +88,7 @@ export const StyledInput = styled(Field)`
   line-height: calc(24 / 16);
   transition: border-color var(--slow-transform);
 
-  ::placeholder{
+  ::placeholder {
     color: var(--black);
   }
 

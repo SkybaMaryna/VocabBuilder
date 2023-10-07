@@ -6,12 +6,10 @@ export const StyledLogo = styled.div`
   align-items: center;
   gap: 16px;
   width: 182px;
-  margin-top: 16px;
 
   @media ${devices.tablet} {
     width: 214px;
     margin-top: 24px;
-
   }
 `;
 
