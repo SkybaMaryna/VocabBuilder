@@ -1,11 +1,8 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { registrationThunk } from 'redux/Auth/authOperations';
-// import { useSearchParams } from 'react-router-dom';
-// import { verifyThunk } from 'redux/Auth/authOperations';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { registrationThunk } from 'redux/Auth/authOperations';
 import { Button, RegisterSchema } from 'components';
-// import { handleEyeClick } from 'redux/Auth/authSlice';
-// import { selectIsClicked } from 'redux/selectors';
+import icons from '../../images/sprite.svg';
 import {
   StyledError,
   StyledForm,
@@ -24,20 +21,10 @@ import {
   StyledSuccessMessage,
   StyledIconSuccess,
 } from './Forms.styled';
-import { useState } from 'react';
-import icons from '../../images/sprite.svg';
 
 export const RegisterForm = () => {
   const [isClicked, setIsClicked] = useState(false);
-  //   const dispatch = useDispatch();
-
-  //   const [searchParams] = useSearchParams();
-  //   const verificationToken = searchParams.get('verificationToken');
-
-  //   useEffect(() => {
-  //     if (verificationToken === null) return;
-  //     dispatch(verifyThunk(verificationToken));
-  //   }, [verificationToken, dispatch]);
+    const dispatch = useDispatch();
 
   return (
     <StyledForm
@@ -47,9 +34,9 @@ export const RegisterForm = () => {
         password: '',
       }}
       validationSchema={RegisterSchema}
-      //   onSubmit={values => {
-      //     dispatch(registrationThunk(values));
-      //   }}
+        onSubmit={values => {
+          dispatch(registrationThunk(values));
+        }}
     >
       {({ errors, touched, handleChange, setFieldTouched }) => (
         <StyledFormInsight>

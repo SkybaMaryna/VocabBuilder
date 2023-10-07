@@ -18,68 +18,79 @@ const initialState = {
 const authSlice = createSlice({
   name: '@@auth',
   initialState,
-  extraReducers: {
-    [registrationThunk.pending]: (state) => {
-      state.loading = true;
-      Loading.hourglass('We are validating your data...');
-    },
-    [registrationThunk.fulfilled]: (state, { payload }) => {
-      state.user = payload.user;
-      state.loading = false;
-      Loading.remove();
-    },
-    [registrationThunk.rejected]: (state, { payload }) => {
-      state.error = payload;
-      Loading.remove();
-    },
-    [loginThunk.pending]: (state) => {
-      state.loading = true;
-      Loading.hourglass('Log In...');
-    },
-    [loginThunk.rejected]: (state, { payload }) => {
-      state.error = payload;
-      Loading.remove();
-    },
-    [loginThunk.fulfilled]: (state, { payload }) => {
-      state.user = payload?.user;
-      state.accessToken = payload?.token;
-      state.online = true;
-      state.loading = false;
-      state.error = null;
-      Loading.remove();
-    },
-    [logoutThunk.pending]: (state) => {
-      state.loading = true;
-      Loading.pulse('Log Out...');
-    },
-    [logoutThunk.fulfilled]: (state) => {
-      state.user = { name: '', email: '' };
-      state.accessToken = '';
-      state.online = false;
-      state.loading = false;
-      state.error = null;
-      Loading.remove();
-    },
-    [logoutThunk.rejected]: (state, { payload }) => {
-      state.error = payload;
-      state.loading = false;
-      Loading.remove();
-    },
-    [getCurrentUserThunk.pending]: (state) => {
-      state.loading = true;
-      Loading.hourglass('We are validating your data...');
-    },
-    [getCurrentUserThunk.fulfilled]: (state, { payload }) => {
-      state.online = true;
-      state.loading = false;
-      state.user.id = payload._id;
-      Loading.remove();
-    },
-    [getCurrentUserThunk.rejected]: (state, { payload }) => {
-      state.error = payload;
-      state.loading = false;
-      Loading.remove();
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(registrationThunk.pending, state => {
+        state.loading = true;
+        Loading.hourglass('We are validating your data...');
+      })
+      .addCase(registrationThunk.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.accessToken = payload.token;
+        state.online = true;
+        state.loading = false;
+        state.error = null;
+        Loading.remove();
+      })
+      .addCase(registrationThunk.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+        Loading.remove();
+      })
+      .addCase(loginThunk.pending, state => {
+        state.loading = true;
+        Loading.hourglass('Log In...');
+      })
+      .addCase(loginThunk.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.accessToken = payload.token;
+        state.online = true;
+        state.loading = false;
+        state.error = null;
+        Loading.remove();
+      })
+      .addCase(loginThunk.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+        Loading.remove();
+      })
+      .addCase(logoutThunk.pending, state => {
+        state.loading = true;
+        Loading.pulse('Log Out...');
+      })
+      .addCase(logoutThunk.fulfilled, state => {
+        state.user = { name: '', email: '' };
+        state.accessToken = '';
+        state.online = false;
+        state.loading = false;
+        state.error = null;
+        Loading.remove();
+      })
+      .addCase(logoutThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
+        Loading.remove();
+      })
+      .addCase(getCurrentUserThunk.pending, state => {
+        state.loading = true;
+        Loading.hourglass('We are validating your data...');
+      })
+      .addCase(getCurrentUserThunk.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.accessToken = payload.token;
+        state.user.id = payload._id;
+        state.online = true;
+        state.loading = false;
+        Loading.remove();
+      })
+      .addCase(getCurrentUserThunk.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
+        Loading.remove();
+      });
   },
 });
 

@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from 'api/instance';
 import Notiflix from 'notiflix';
-import { selectUserLoading } from 'redux/selectors';
 
 export const setToken = token => {
   instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -19,19 +18,6 @@ export const registrationThunk = createAsyncThunk(
     } catch (error) {
       const errorMessage = error.response.data.message;
       Notiflix.Notify.failure('Respond from server is ' + errorMessage);
-
-      setTimeout(() => {
-        if (error) {
-          Notiflix.Report.warning(
-            'Loading took more than 5 seconds',
-            'Loading seems stuck, or there was a server error. Please, check your data, and then try to "Register" again.',
-            'GOT IT',
-            () => {
-              window.location.reload();
-            }
-          );
-        }
-      }, 5000);
     }
   }
 );
@@ -39,25 +25,11 @@ export const registrationThunk = createAsyncThunk(
 export const loginThunk = createAsyncThunk(
   '@@auth/login',
   async (credentials, thunkAPI) => {
-    const loading = selectUserLoading(thunkAPI.getState());
     try {
       const res = await instance.post('users/signin', credentials);
       setToken(res.data.token);
       return res.data;
     } catch (error) {
-      setTimeout(() => {
-        if (!loading) {
-          Notiflix.Report.warning(
-            'Loading took more than 5 seconds',
-            'Loading seems stuck, or there was a server error. Please, check your data, and then try to "Login" again.',
-            'GOT IT',
-            () => {
-              window.location.reload();
-            }
-          );
-        }
-      }, 5000);
-
       const errorMessage = error.response.data.message;
       Notiflix.Notify.failure('Respond from server is ' + errorMessage);
       return thunkAPI.rejectWithValue(errorMessage);
