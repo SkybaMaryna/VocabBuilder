@@ -1,9 +1,8 @@
 import React from 'react';
 import { Logo, RegisterForm } from 'components';
-import { StyledCaption } from 'pages/LoginPage/LoginPage.styled';
 import { useMediaRules } from 'hooks/mediaRules';
 import {
-  StyledImg,
+  StyledCaption,
   StyledImgWrapper,
   StyledLogoWrapper,
   StyledWrapper,
@@ -17,10 +16,10 @@ const RegisterPage = () => {
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
-      <StyledWrapper>
+      <StyledWrapper page="register">
         <StyledImgWrapper>
           {!isTabletOnly && (
-            <StyledImg
+            <img
               srcSet={`
           ${require('../../images/illustration-247.png')} 247w,
           ${require('../../images/illustration-494.png')} 494w,

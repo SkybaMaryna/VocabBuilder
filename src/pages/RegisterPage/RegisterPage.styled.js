@@ -20,11 +20,14 @@ export const StyledLogoWrapper = styled.div`
 
 export const StyledWrapper = styled.div`
   display: flex;
-  gap: 98px;
+  gap: ${props => (props.page === 'register' ? '8px' : '43px')};
   flex-direction: column;
   align-items: center;
-  padding-bottom: 106px;
 
+  @media ${devices.tablet} {
+    gap: ${props => (props.page === 'register' ? '98px' : '172px')};
+    padding-bottom: 106px;
+  }
   @media ${devices.desktop} {
     gap: 80px;
     flex-direction: row-reverse;
@@ -34,12 +37,22 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledImgWrapper = styled.div`
-`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
 
-export const StyledImg = styled.img`
-  margin-bottom: 8px;
+export const StyledImg = styled.img``;
+
+export const StyledCaption = styled.p`
+  color: var(--black-80);
+  text-align: center;
+  font-family: var(--FixelDisplay);
+  font-size: 14px;
+  text-align: center;
 
   @media ${devices.desktop} {
-    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: calc(24 / 16);
   }
 `;
