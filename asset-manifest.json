@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/VocabBuilder/static/js/main.07609b10.js",
+    "main.js": "/VocabBuilder/static/js/main.8c08364e.js",
     "static/media/SFProText-Regular.ttf": "/VocabBuilder/static/media/SFProText-Regular.90da7ab18293ca42e335.ttf",
     "static/media/illustration-996.png": "/VocabBuilder/static/media/illustration-996.bb22c5068b58975365fe.png",
     "static/media/SF-Pro-Display-Light.otf": "/VocabBuilder/static/media/SF-Pro-Display-Light.5a47a04ca76b10e69ca3.otf",
@@ -18,9 +18,9 @@
     "static/media/illustration-247.png": "/VocabBuilder/static/media/illustration-247.0981d92b7522fa4538a8.png",
     "static/media/sprite.svg": "/VocabBuilder/static/media/sprite.827dfc06d9ccd7e6b0735351762302d5.svg",
     "index.html": "/VocabBuilder/index.html",
-    "main.07609b10.js.map": "/VocabBuilder/static/js/main.07609b10.js.map"
+    "main.8c08364e.js.map": "/VocabBuilder/static/js/main.8c08364e.js.map"
   },
   "entrypoints": [
-    "static/js/main.07609b10.js"
+    "static/js/main.8c08364e.js"
   ]
 }
