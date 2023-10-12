@@ -1,6 +1,14 @@
 import React from 'react';
-import { UserBar } from 'components';
+import { Logo, UserBar, UserNav } from 'components';
+import { useMediaRules } from 'hooks/mediaRules';
 
 export const Header = () => {
-  return <UserBar />;
+  const { isDesktop } = useMediaRules();
+  return (
+    <>
+      <Logo />
+      {isDesktop && <UserNav />}
+      <UserBar />
+    </>
+  );
 };

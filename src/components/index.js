@@ -7,4 +7,5 @@ export * from './Forms/RegisterForm'
 export * from './Forms/ValidationSchema'
 export * from './Button/Button'
 export * from './UserBar/UserBar'
+export * from './UserNav/UserNav'
 
