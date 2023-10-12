@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 --white: #FCFCFC;
 --white-30:rgba(252, 252, 252, 0.30);
 --white-40:rgba(252, 252, 252, 0.40);
+--white-70:rgba(252, 252, 252, 0.70);
 --white-80:rgba(252, 252, 252, 0.80);
 --green: #85AA9F;
 --green-10: rgba(133, 170, 159, 0.1);
@@ -77,26 +78,23 @@ h4,
 h5,
 h6,
 ul,
-ol {
+ol,
+p {
   padding: 0;
   margin: 0;
 }
-ul {
-  list-style: none;
-}
+
+ul,
 li {
   list-style: none;
 }
+
 a {
   margin: 0;
   padding: 0;
   text-decoration: none;
 }
 
-p {
-  padding: 0;
-  margin: 0;
-}
 
   //Fonts
 @font-face {

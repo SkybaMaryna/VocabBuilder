@@ -34,6 +34,15 @@ export const StyledWrapper = styled.div`
     justify-content: center;
     padding-bottom: 80px;
   }
+
+  /* background-image: linear-gradient(
+    287deg,
+    rgba(133, 170, 159, 0.51) 23.19%,
+    rgba(255, 255, 255, 0) 60.01%
+  );
+  background-size: 693px 597px;
+  background-repeat: no-repeat;
+  background-position: right -100px ; */
 `;
 
 export const StyledImgWrapper = styled.div`
