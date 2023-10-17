@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 --bright-green: rgba(60, 191, 97, 1);
 --stat-green: #2BD627
 --gray: #DBDBDB;
+--background: #F8F8F8;
 --error-message: #D80027;
 --success-message:#3CBF61;
 
@@ -55,6 +56,7 @@ body {
   font-family: var(--FixelDisplay-Medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
   }
 
   *,

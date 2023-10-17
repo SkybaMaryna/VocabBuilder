@@ -9,7 +9,6 @@ export const StyledLogo = styled.div`
 
   @media ${devices.tablet} {
     width: 214px;
-    margin-top: 24px;
   }
 `;
 

@@ -8,12 +8,10 @@ export const StyledLogoWrapper = styled.div`
 
   @media ${devices.tablet} {
     margin-top: 24px;
-    margin-left: 32px;
+    margin-left: 0px;
     margin-bottom: 144px;
   }
   @media ${devices.desktop} {
-    margin-top: 24px;
-    margin-left: 100px;
     margin-bottom: 64px;
   }
 `;
@@ -31,7 +29,7 @@ export const StyledWrapper = styled.div`
   @media ${devices.desktop} {
     gap: 80px;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: start;
     padding-bottom: 80px;
   }
 

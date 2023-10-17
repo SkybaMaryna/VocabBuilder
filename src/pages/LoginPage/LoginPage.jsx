@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMediaRules } from 'hooks/mediaRules';
-import { LoginForm, Logo } from 'components';
+import { Container, LoginForm, Logo } from 'components';
 import {
   StyledCaption,
   StyledImgWrapper,
@@ -11,7 +11,7 @@ import {
 const LoginPage = () => {
   const { isTabletOnly } = useMediaRules();
   return (
-    <>
+    <Container page='auth'>
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
@@ -41,7 +41,7 @@ const LoginPage = () => {
           <StyledCaption>Word · Translation · Grammar · Progress</StyledCaption>
         )}
       </StyledWrapper>
-    </>
+    </Container>
   );
 };
 

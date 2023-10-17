@@ -1,7 +1,4 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-// import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
-// import { RiErrorWarningLine } from 'react-icons/ri';
-// import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { devices } from 'constants/breakpoints';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
@@ -106,33 +103,6 @@ export const StyledInput = styled(Field)`
     outline: none;
   }
 `;
-// export const StyledButton = styled.button`
-//   width: 100%;
-//   height: 54px;
-//   /* padding: 18px 141px; */
-//   border: none;
-//   justify-content: center;
-//   border-radius: 42px;
-//   background: #f3f3f3;
-//   color: #161f37;
-//   font-size: 14px;
-//   font-weight: 600;
-//   line-height: calc (18 / 14);
-//   margin-bottom: 14px;
-//   cursor: pointer;
-//   transition: box-shadow 0.3s ease;
-
-//   &:hover {
-//     text-decoration: underline;
-//     box-shadow: 1px 0px 3px 4px rgba(35, 93, 171, 0.4) inset;
-//   }
-
-//   @media ${devices.tablet} {
-//     padding: 18px 169px;
-//     font-size: 16px;
-//     line-height: calc (18 / 16);
-//   }
-// `;
 
 export const StyledError = styled(ErrorMessage)`
   font-family: var(--FixelDisplay);

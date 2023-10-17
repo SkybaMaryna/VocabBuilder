@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo, RegisterForm } from 'components';
+import { Container, Logo, RegisterForm } from 'components';
 import { useMediaRules } from 'hooks/mediaRules';
 import {
   StyledCaption,
@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const { isDesktop, isTabletOnly } = useMediaRules();
 
   return (
-    <>
+    <Container page='auth'>
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
@@ -42,7 +42,7 @@ const RegisterPage = () => {
           <StyledCaption>Word · Translation · Grammar · Progress</StyledCaption>
         )}
       </StyledWrapper>
-    </>
+    </Container>
   );
 };
 

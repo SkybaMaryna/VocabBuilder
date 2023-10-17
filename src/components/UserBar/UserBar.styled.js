@@ -7,16 +7,17 @@ export const StyledUserBar = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
+  margin-bottom: ${props => (props.page === 'menu' ? '166px' : '0px')};
 
   @media ${devices.tablet} {
     width: 113px;
     gap: 16px;
+    margin-bottom: ${props => (props.page === 'menu' ? '170px' : '0px')};
   }
 `;
 
 export const StyledName = styled.p`
-  color: ${props =>
-    props.page === 'menu' ? 'var(--white-70)' : 'var(--black)'};
+  color: ${props => (props.page === 'menu' ? 'var(--white)' : 'var(--black)')};
   font-family: var(--FixelDisplay-Medium);
   font-size: 16px;
   line-height: calc(24 / 16);
@@ -38,8 +39,7 @@ export const StyledUserImg = styled.div`
   font-family: var(--FixelDisplay-Bold);
   font-size: 20px;
   line-height: calc(24 / 20);
-  color: ${props =>
-    props.page === 'menu' ? 'var(--green)' : 'var(--white-70)'};
+  color: ${props => (props.page === 'menu' ? 'var(--green)' : 'var(--white)')};
 
   background-color: ${props =>
     props.page === 'menu' ? 'var(--white)' : 'var(--green)'};
