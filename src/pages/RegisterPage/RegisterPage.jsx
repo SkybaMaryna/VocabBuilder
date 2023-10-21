@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const { isDesktop, isTabletOnly } = useMediaRules();
 
   return (
-    <Container page='auth'>
+    <Container page="auth">
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
@@ -28,6 +28,7 @@ const RegisterPage = () => {
               sizes="(min-width: 768px) 498px, (min-width: 375px) 247px, 100vw"
               src={require('../../images/illustration-247.png')}
               alt="a girl and a boy are reading books"
+              width="247"
               loading="lazy"
             />
           )}

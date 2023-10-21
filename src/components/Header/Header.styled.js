@@ -19,6 +19,7 @@ export const StyledHeader = styled.header`
 
 export const StyledIconBurger = styled.svg`
   stroke: var(--black);
+  cursor: pointer;
 
   &:hover {
     stroke: var(--black-50);

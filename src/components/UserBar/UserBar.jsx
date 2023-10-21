@@ -7,9 +7,9 @@ export const UserBar = ({ page }) => {
   const userName = useSelector(selectUserName);
 
   return (
-    <StyledUserBar page={page}>
-      <StyledName page={page}>{userName}</StyledName>
-      <StyledUserImg page={page}>{userName[0]}</StyledUserImg>
+    <StyledUserBar $page={page}>
+      <StyledName $page={page}>{userName}</StyledName>
+      <StyledUserImg $page={page}>{userName[0]}</StyledUserImg>
     </StyledUserBar>
   );
 };

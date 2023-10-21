@@ -38,6 +38,7 @@ export const StyledNavLink = styled(NavLink)`
     color: var(--black);
   }
 
+
   @media ${devices.desktop} {
     color: var(--black);
 

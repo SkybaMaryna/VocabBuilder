@@ -9,6 +9,10 @@ export const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { isDesktop } = useMediaRules();
 
+  const onClose = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
+
   return (
     <>
       <StyledHeader>
@@ -29,7 +33,7 @@ export const Header = () => {
           )}
         </StyledWrapper>
       </StyledHeader>
-      {isOpenMenu && !isDesktop && <BurgerMenu />}
+      {isOpenMenu && !isDesktop && <BurgerMenu onClose={onClose} isOpenMenu={isOpenMenu}/>}
     </>
   );
 };
