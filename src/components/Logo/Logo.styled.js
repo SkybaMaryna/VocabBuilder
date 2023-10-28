@@ -26,6 +26,7 @@ export const StyledName = styled.p`
   color: var(--black);
   font-family: var(--FixelDisplay-SemiBold);
   font-size: 18px;
+  font-weight: 600;
   line-height: calc(24 / 18);
 
   @media ${devices.tablet} {

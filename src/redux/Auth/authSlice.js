@@ -8,7 +8,7 @@ import {
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 const initialState = {
-  user: { name: '', email: '', _id: '' },
+  user: { name: '', email: '', id: '' },
   accessToken: null,
   online: false,
   loading: false,
@@ -75,7 +75,7 @@ const authSlice = createSlice({
       })
       .addCase(getCurrentUserThunk.pending, state => {
         state.loading = true;
-        Loading.hourglass('We are validating your data...');
+        Loading.hourglass('We are checking your data...');
       })
       .addCase(getCurrentUserThunk.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;

@@ -8,14 +8,12 @@ import GlobalStyle from 'globalStyles';
 import { persistor, store } from 'redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <PersistGate loading={null} persistor={persistor}>
-      <Provider store={store}>
-        <BrowserRouter basename="/VocabBuilder">
-          <GlobalStyle />
-          <App />
-        </BrowserRouter>
-      </Provider>
-    </PersistGate>
-  </React.StrictMode>
+  <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>
+      <BrowserRouter basename="/VocabBuilder">
+        <GlobalStyle />
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </PersistGate>
 );

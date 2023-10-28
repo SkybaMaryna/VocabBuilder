@@ -1,11 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from 'api/instance';
 import Notiflix from 'notiflix';
+import { selectToken } from 'redux/selectors';
 
 export const setToken = token => {
   instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };
-export const clearToken = token => {
+export const clearToken = () => {
   instance.defaults.headers.common['Authorization'] = ``;
 };
 
@@ -52,8 +53,10 @@ export const logoutThunk = createAsyncThunk('@@auth/logout', async () => {
 
 export const getCurrentUserThunk = createAsyncThunk(
   '@@auth/current',
-  async (_, thunkAPI) => {
+  async (_, { getState }) => {
+    const token = selectToken(getState());
     try {
+      setToken(token);
       const res = await instance.get('users/current');
       return res.data;
     } catch (error) {

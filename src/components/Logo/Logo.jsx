@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledIconLogo, StyledLogo, StyledName } from './Logo.styled';
 import icons from '../../images/sprite.svg';
+import { StyledIconLogo, StyledLogo, StyledName } from './Logo.styled';
 
 export const Logo = () => {
   return (

@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './Auth/authSlice';
+import { wordsReducer } from './Words/wordsSlice';
 
 const persistConfig = {
   key: 'data',
@@ -19,9 +20,17 @@ const persistConfig = {
   whitelist: ['accessToken', 'user', 'online'],
 };
 
+const persistConfig2 = {
+  key: 'words',
+  version: 2,
+  storage,
+  whitelist: ['categories'],
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+    words: persistReducer(persistConfig2, wordsReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

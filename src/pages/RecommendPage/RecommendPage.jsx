@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Dashboard } from 'components';
 
 const RecommendPage = () => {
   return (
-    <div>RecommendPage</div>
-  )
-}
+    <div>
+      <Dashboard />
+    </div>
+  );
+};
 
-export default RecommendPage
+export default RecommendPage;

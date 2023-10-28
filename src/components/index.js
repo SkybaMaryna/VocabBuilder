@@ -9,3 +9,7 @@ export * from './Button/Button';
 export * from './UserBar/UserBar';
 export * from './UserNav/UserNav';
 export * from './BurgerMenu/BurgerMenu';
+export * from './Dashboard/Dashboard';
+export * from './Filters/Filters';
+export * from './Statistics/Statistics';
+export * from './Selection/Selection';
