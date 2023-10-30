@@ -88,7 +88,9 @@ const authSlice = createSlice({
       })
       .addCase(getCurrentUserThunk.rejected, (state, { payload }) => {
         state.error = payload;
+        
         state.loading = false;
+        state.online = false;
         Loading.remove();
       });
   },

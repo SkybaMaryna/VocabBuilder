@@ -53,7 +53,7 @@ export const logoutThunk = createAsyncThunk('@@auth/logout', async () => {
 
 export const getCurrentUserThunk = createAsyncThunk(
   '@@auth/current',
-  async (_, { getState }) => {
+  async (_, { getState, rejectWithValue }) => {
     const token = selectToken(getState());
     try {
       setToken(token);
@@ -62,6 +62,7 @@ export const getCurrentUserThunk = createAsyncThunk(
     } catch (error) {
       const errorMessage = error.response.data.message;
       Notiflix.Notify.failure('Respond from server is ' + errorMessage);
+      return rejectWithValue(errorMessage);
     }
   }
 );

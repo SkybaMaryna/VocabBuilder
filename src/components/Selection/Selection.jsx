@@ -44,10 +44,25 @@ export const Selection = () => {
     menu: (baseStyles, state) => ({
       ...baseStyles,
       width: isTablet ? '189px' : '343px',
+      height: '368px',
       background: 'var(--white)',
       borderRadius: '15px',
       boxShadow: '0px 4px 47px 0px var(--black-80)',
       padding: '12px 24px',
+    }),
+    menuList: (baseStyles, state) => ({
+      ...baseStyles,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px',
+      maxHeight: '344px',
+    }),
+    option: (baseStyles, state) => ({
+      ...baseStyles,
+      color: 'var(--black)',
+      fontSize: '16px',
+      fontWeight: '500',
+      lineHeight: 'calc(24/16)',
     }),
   };
 
@@ -62,6 +77,8 @@ export const Selection = () => {
       blurInputOnSelect
       captureMenuScroll
       closeMenuOnSelect
+      defaultMenuIsOpen={true}
+      hideSelectedOptions
       unstyled
       styles={styles}
     />
