@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCategories } from 'redux/selectors';
 import Select from 'react-select';
+import {
+  StyledLabel,
+  StyledRadioInput,
+  StyledRadioInputBox,
+} from './Selection.styled';
 import { useMediaRules } from 'hooks/mediaRules';
 
 export const Selection = () => {
@@ -10,6 +15,7 @@ export const Selection = () => {
     value: 'categories',
     label: 'Categories',
   });
+  const [verbType, setVerbType] = useState('regular');
   const { isTablet } = useMediaRules();
 
   const options = ListOfCategories.reduce(
@@ -67,20 +73,43 @@ export const Selection = () => {
   };
 
   return (
-    <Select
-      defaultValue={selectedOption}
-      placeholder={'Categories'}
-      onChange={setSelectedOption}
-      options={options}
-      isClearable
-      backspaceRemovesValue
-      blurInputOnSelect
-      captureMenuScroll
-      closeMenuOnSelect
-      defaultMenuIsOpen={true}
-      hideSelectedOptions
-      unstyled
-      styles={styles}
-    />
+    <div>
+      <Select
+        defaultValue={selectedOption}
+        placeholder={'Categories'}
+        onChange={setSelectedOption}
+        options={options}
+        isClearable
+        backspaceRemovesValue
+        blurInputOnSelect
+        captureMenuScroll
+        closeMenuOnSelect
+        hideSelectedOptions
+        unstyled
+        styles={styles}
+      />
+      {selectedOption.value === 'verb' && (
+        <StyledRadioInputBox>
+          <StyledLabel className={verbType === 'regular' && 'checked'}>
+            <StyledRadioInput
+              type="radio"
+              name="verbType"
+              value="regular"
+              onClick={() => setVerbType('regular')}
+            />
+            Regular
+          </StyledLabel>
+          <StyledLabel className={verbType === 'irregular' && 'checked'}>
+            <StyledRadioInput
+              type="radio"
+              name="verbType"
+              value="irregular"
+              onClick={() => setVerbType('irregular')}
+            />
+            Irregular
+          </StyledLabel>
+        </StyledRadioInputBox>
+      )}
+    </div>
   );
 };
