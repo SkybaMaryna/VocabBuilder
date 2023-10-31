@@ -1,6 +1,16 @@
 import { devices } from 'constants/breakpoints';
 import styled from 'styled-components';
 
+export const StyledFiltersWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+  }
+`;
+
 export const StyledInputWrapper = styled.div`
   position: relative;
   width: 343px;
@@ -12,6 +22,7 @@ export const StyledInputWrapper = styled.div`
 
 export const StyledDashboardInput = styled.input`
   width: 100%;
+  height: 48px;
   color: var(--black);
   background-color: transparent;
   font-family: inherit;

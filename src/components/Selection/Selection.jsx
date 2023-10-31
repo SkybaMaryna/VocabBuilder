@@ -6,6 +6,7 @@ import {
   StyledLabel,
   StyledRadioInput,
   StyledRadioInputBox,
+  StyledSelect,
 } from './Selection.styled';
 import { useMediaRules } from 'hooks/mediaRules';
 
@@ -37,6 +38,7 @@ export const Selection = () => {
       backgroundColor: 'transparent',
       borderRadius: '15px',
       width: isTablet ? '164px' : '343px',
+      height: '48px',
       padding: '12px 24px',
     }),
     clearIndicator: (baseStyles, state) => ({
@@ -73,7 +75,7 @@ export const Selection = () => {
   };
 
   return (
-    <div>
+    <StyledSelect>
       <Select
         defaultValue={selectedOption}
         placeholder={'Categories'}
@@ -110,6 +112,6 @@ export const Selection = () => {
           </StyledLabel>
         </StyledRadioInputBox>
       )}
-    </div>
+    </StyledSelect>
   );
 };

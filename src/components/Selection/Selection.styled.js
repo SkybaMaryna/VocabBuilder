@@ -1,8 +1,20 @@
 import styled from 'styled-components';
+import { devices } from 'constants/breakpoints';
 
+export const StyledSelect = styled.div`
+  position: relative;
+`;
 export const StyledRadioInputBox = styled.div`
   display: flex;
   gap: 16px;
+  align-items: center;
+  position: absolute;
+  bottom: -26px;
+
+  @media ${devices.tablet} {
+    bottom: 14px;
+    left: 175px;
+  }
 `;
 
 export const StyledRadioInput = styled.input`
